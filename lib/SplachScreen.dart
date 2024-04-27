@@ -13,7 +13,7 @@ class SplachScreen extends StatefulWidget {
 class _MyWidgetState extends State<SplachScreen> {
   @override
   void initState() {
-    Timer(const Duration(seconds: 3), () {
+    Timer(const Duration(seconds: 2), () {
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => const Home()));
     });
@@ -22,8 +22,14 @@ class _MyWidgetState extends State<SplachScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Colors.blue,
-    );
+    return Scaffold(
+        body: Container(
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+          image: NetworkImage(
+              "https://unsplash.com/photos/running-black-porsche-sedan-3ZUsNJhi_Ik"),
+        ),
+      ),
+    ));
   }
 }
